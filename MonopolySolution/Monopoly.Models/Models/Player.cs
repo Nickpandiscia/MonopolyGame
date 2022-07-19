@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Monopoly.Models
+namespace Monopoly.Models.Models
 {
-    public class Class1
+    public class Player
     {
+
+
     }
 }
