@@ -49,5 +49,15 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Monopoly.Engine\Monopoly.Engine.csproj">
+      <Project>{B606BC8E-4117-4F6F-A410-DB7867B0C43A}</Project>
+      <Name>Monopoly.Engine</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Monopoly.Models\Monopoly.Models.csproj">
+      <Project>{5FD9B77C-387C-4CBA-BE6C-0AA02C9ED6C6}</Project>
+      <Name>Monopoly.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
