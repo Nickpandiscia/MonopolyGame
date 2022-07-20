@@ -1,18 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Monopoly.Engine
 {
-    public class GameEngine
+    public class GameEngine : GameEngineBase
     {
-        public GameSettings Settings { get; set; }
+        public GameSettings Settings;
+
+        public GameEngine(GameSettings settings)
+        {
+            Settings = settings;
+        }
 
         public void RunGame()
         {
 
         }
+
     }
 }
