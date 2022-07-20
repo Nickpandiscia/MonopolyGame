@@ -3,6 +3,7 @@ using Monopoly.Engine;
 using Monopoly.Engine.Tools;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Speech.Synthesis;
 using System.Text;
@@ -14,16 +15,14 @@ namespace Monopoly
     {
         static void Main(string[] args)
         {
-            //foreach(var card in GameManager.Instance.Cards)
-            //{
-            //    Console.WriteLine(card.ToString());
-            //}
-            //foreach(var tile in GameManager.Instance.BoardTiles)
-            //{
-            //    Console.WriteLine(tile.ToString());
-            //}
-            //Console.ReadLine();
+            
+            string thisDir = Directory.GetCurrentDirectory();
+            Console.WriteLine(thisDir);
+            DirectoryInfo di = new DirectoryInfo(thisDir);
+            Console.WriteLine($"{di.LastWriteTime} {di.Attributes}");
+
             var settings = new GameSettings();
+
 
 
 
@@ -38,10 +37,12 @@ namespace Monopoly
                 if (settingsAnswer == "t")
                 {
                     Console.WriteLine($"How many players are there?");
-                    var playerCount = int.Parse(Console.ReadLine());
+                    var playerCount = int.Parse(Console.ReadLine());                   
+                    Logger.Log(playerCount.ToString());
 
                     Console.WriteLine($"How much currency do you want to start with?");
                     var currencyCount = int.Parse(Console.ReadLine());
+                    
 
                     settings.PlayerCount = playerCount;
                     settings.StartingPlayerBalance = currencyCount;
@@ -50,6 +51,7 @@ namespace Monopoly
                 else
                 {
                     // Logger.Log("Player chose not to configure");
+                    Logger.Log(settingsAnswer);
                 }
                 // GameManager.Instance.SetGameSettings(settings);
 
