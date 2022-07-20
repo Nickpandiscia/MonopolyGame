@@ -24,16 +24,17 @@ namespace Monopoly
             //}
             //Console.ReadLine();
             var settings = new GameSettings();
-            Console.WriteLine("Hit any button to continue, or type exit to quit the game.");
-            var exitAnswer = Console.ReadLine();
-            do
+
+
+
+            Console.WriteLine("Do you want to configure the settings? (Type t to enter settings). If not, type f. Type exit to quit.");
+            var settingsAnswer = Console.ReadLine();
+            if (settingsAnswer == "exit")
             {
-                Console.WriteLine("Do you want to configure the settings? (Type t to enter settings). If not, type f. Type exit to quit.");
-                var settingsAnswer = Console.ReadLine();
-                if(exitAnswer == "exit")
-                {
-                    break;
-                }
+                return;
+            }
+            else
+            {
                 if (settingsAnswer == "t")
                 {
                     Console.WriteLine($"How many players are there?");
@@ -67,8 +68,11 @@ namespace Monopoly
 
 
                 }
-            }while (exitAnswer != "exit");
-            
+
+            }
+
+
+
 
 
 
