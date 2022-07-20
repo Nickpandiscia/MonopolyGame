@@ -4,6 +4,7 @@ using Monopoly.Engine.Tools;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Speech.Synthesis;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -43,12 +44,21 @@ namespace Monopoly
             }
             else
             {
-                Logger.Log("Player chose not to configure");
+               // Logger.Log("Player chose not to configure");
             }
-            GameManager.Instance.SetGameSettings(settings);
-            
+           // GameManager.Instance.SetGameSettings(settings);
 
 
+            using (SpeechSynthesizer synth = new SpeechSynthesizer())
+            {
+
+                // Configure the audio output.   
+                synth.SetOutputToDefaultAudioDevice();
+                // Speak the contents of the prompt synchronously.  
+                synth.Speak("Wake up. The game settings have been set bitch.");
+            }
+
+            Console.ReadLine();
         }
     }
 }
