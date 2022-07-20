@@ -1,4 +1,3 @@
-Id,Tag,Type,Category,Name,Description,Effect
 1,ADVGO,Chance,move,Advance to Go,Collect $200.,0
 2,ADVIA,Chance,move,Advance to Illinois Ave.,If you pass Go - collect $200.,24
 3,ADVSC,Chance,move,Advance to St. Charles Place,If you pass Go - collect $200.,11
