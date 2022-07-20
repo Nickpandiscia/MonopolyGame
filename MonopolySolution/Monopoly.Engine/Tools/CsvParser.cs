@@ -17,24 +17,24 @@ namespace Monopoly.Engine.Tools
 
 
 
-        public void ParseCards()
+        public List<Card> ParseCards()
         {
             // C:\Users\Steven\Desktop\Monopoly\MonopolyGame\MonopolySolution\Monopoly.Models\DataFiles\BoardTiles.csv
 
-            TextReader reader = new StreamReader("import.txt");
+            TextReader reader = new StreamReader(Constants.CardPath);
             var csvReader = new CsvReader(reader, _CsvConfig);
             var records = csvReader.GetRecords<Card>();
 
-            Console.WriteLine(records);
+            return records.ToList();
         }
 
-        public void ParseBoardTiles()
+        public List<BoardTile> ParseBoardTiles()
         {
-            TextReader reader = new StreamReader("import.txt");
+            TextReader reader = new StreamReader(Constants.BoardTilePath);
             var csvReader = new CsvReader(reader, _CsvConfig);
-            var records = csvReader.GetRecords<Card>();
+            var records = csvReader.GetRecords<BoardTile>();
 
-            Console.WriteLine(records);
+            return records.ToList();
         }
 
     }

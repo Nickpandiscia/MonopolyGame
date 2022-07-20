@@ -12,9 +12,10 @@ namespace Monopoly
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(Constants.RelativePath);
-            Console.WriteLine(Constants.BoardTilePath);
-            Console.WriteLine(Constants.CardPath);
+            foreach(var card in GameManager.Instance.Cards)
+            {
+                Console.WriteLine($"{card.Name} {card.Tag} {card.Type} {card.Description}");
+            }
 
             Console.ReadLine();
         }

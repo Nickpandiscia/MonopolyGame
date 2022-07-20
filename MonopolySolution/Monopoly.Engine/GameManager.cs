@@ -1,4 +1,5 @@
-﻿using Monopoly.Models.Models;
+﻿using Monopoly.Engine.Tools;
+using Monopoly.Models.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,24 +22,25 @@ namespace Monopoly.Engine
                 return _Instance;
             }
         }
-
+        public CsvParser CsvParser { get; set; }
         public List<Card> Cards { get; set; }
         public List<BoardTile> BoardTiles { get; set; }
 
         private GameManager() 
         {
+            CsvParser = new CsvParser();
             PopulateCards();
             PopulateBoardTiles();
         }
 
         public void PopulateCards()
         {
-
+           Cards = CsvParser.ParseCards();
         }
 
         public void PopulateBoardTiles()
         {
-
+            BoardTiles = CsvParser.ParseBoardTiles();
         }
 
     }
