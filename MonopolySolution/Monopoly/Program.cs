@@ -56,7 +56,15 @@ namespace Monopoly
                 synth.SetOutputToDefaultAudioDevice();
                 // Speak the contents of the prompt synchronously.  
                 synth.Speak("Wake up. The game settings have been set bitch.");
+
+                synth.Speak("Welcome to Monopoly! Lets begin.");
+
+                
+
+
             }
+
+
 
             Console.ReadLine();
         }
