@@ -12,15 +12,38 @@ namespace Monopoly
     {
         static void Main(string[] args)
         {
-            foreach(var card in GameManager.Instance.Cards)
+            //foreach(var card in GameManager.Instance.Cards)
+            //{
+            //    Console.WriteLine(card.ToString());
+            //}
+            //foreach(var tile in GameManager.Instance.BoardTiles)
+            //{
+            //    Console.WriteLine(tile.ToString());
+            //}
+            //Console.ReadLine();
+            var settings = new GameSettings();
+            Console.WriteLine("Do you want to configure the settings? (Type t to enter settings). If not, type f. Type exit to quit.");
+            var settingAnswer = Console.ReadLine();
+            if(settingAnswer == "exit")
             {
-                Console.WriteLine(card.ToString());
+                return;
             }
-            foreach(var tile in GameManager.Instance.BoardTiles)
+            if (settingAnswer == "t")
             {
-                Console.WriteLine(tile.ToString());
+                Console.WriteLine($"How many players are there?");
+                var playerCount = int.Parse(Console.ReadLine());
+
+                Console.WriteLine($"How much currency do you want to start with?");
+                var currencyCount = int.Parse(Console.ReadLine());
+
+                settings.PlayerCount = playerCount;
+                settings.StartingPlayerBalance = currencyCount;
+                settings.StartingProperties = 0;
             }
-            Console.ReadLine();
+            GameManager.Instance.SetGameSettings(settings);
+            
+
+
         }
     }
 }
