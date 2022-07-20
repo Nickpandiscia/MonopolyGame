@@ -9,6 +9,7 @@ namespace Monopoly.Engine
         public GameSettings Settings;
 
         public GameEngine(GameSettings settings)
+            : base()
         {
             Settings = settings;
         }
