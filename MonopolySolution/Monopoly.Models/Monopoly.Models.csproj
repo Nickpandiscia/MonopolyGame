@@ -47,5 +47,9 @@
   <ItemGroup>
     <Folder Include="Contracts\" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="DataFiles\BoardTiles.csv" />
+    <None Include="DataFiles\Cards.csv" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
