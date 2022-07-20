@@ -14,9 +14,12 @@ namespace Monopoly
         {
             foreach(var card in GameManager.Instance.Cards)
             {
-                Console.WriteLine($"{card.Name} {card.Tag} {card.Type} {card.Description}");
+                Console.WriteLine(card.ToString());
             }
-
+            foreach(var tile in GameManager.Instance.BoardTiles)
+            {
+                Console.WriteLine(tile.ToString());
+            }
             Console.ReadLine();
         }
     }

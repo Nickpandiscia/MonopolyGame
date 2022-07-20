@@ -15,5 +15,10 @@ namespace Monopoly.Models.Models
         public string Name { get; set; }
         public string Description { get; set; }
         public string Effect { get; set; }
+
+        public override string ToString()
+        {
+            return $"{Name} {Tag} {Type} {Description} {Effect} {Category} {Id}";
+        }
     }
 }

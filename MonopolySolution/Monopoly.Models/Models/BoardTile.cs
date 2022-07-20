@@ -21,5 +21,10 @@ namespace Monopoly.Models.Models
         public int RentBuild4 { get; set; }
         public int RentBuild5 { get; set; }
         public int Number { get; set; }
+
+        public override string ToString()
+        {
+            return $"{Name} {Space} {Color} {Position} {Price} {PriceBuild} {Rent} {RentBuild1} {RentBuild2} {RentBuild3} {RentBuild4} {RentBuild5} {Number}";
+        }
     }
 }
