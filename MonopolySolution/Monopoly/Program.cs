@@ -1,4 +1,5 @@
-﻿using Monopoly.Engine;
+﻿using Monopoly.Core;
+using Monopoly.Engine;
 using Monopoly.Engine.Tools;
 using System;
 using System.Collections.Generic;
@@ -39,6 +40,10 @@ namespace Monopoly
                 settings.PlayerCount = playerCount;
                 settings.StartingPlayerBalance = currencyCount;
                 settings.StartingProperties = 0;
+            }
+            else
+            {
+                Logger.Log("Player chose not to configure");
             }
             GameManager.Instance.SetGameSettings(settings);
             

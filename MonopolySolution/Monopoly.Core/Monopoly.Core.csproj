@@ -4,17 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C2A4738F-D1AF-410C-BB6E-0B4D55E6426B}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>Monopoly</RootNamespace>
-    <AssemblyName>Monopoly</AssemblyName>
+    <ProjectGuid>{F18CC5BB-0201-4484-96A6-8EF39A260C7C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Monopoly.Core</RootNamespace>
+    <AssemblyName>Monopoly.Core</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +23,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -43,24 +41,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="Logger.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Monopoly.Core\Monopoly.Core.csproj">
-      <Project>{F18CC5BB-0201-4484-96A6-8EF39A260C7C}</Project>
-      <Name>Monopoly.Core</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Monopoly.Engine\Monopoly.Engine.csproj">
       <Project>{B606BC8E-4117-4F6F-A410-DB7867B0C43A}</Project>
       <Name>Monopoly.Engine</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Monopoly.Models\Monopoly.Models.csproj">
-      <Project>{5FD9B77C-387C-4CBA-BE6C-0AA02C9ED6C6}</Project>
-      <Name>Monopoly.Models</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -17,5 +17,10 @@ namespace Monopoly.Engine.Tools
         
         // C:\Users\Steven\Desktop\Monopoly\MonopolyGame\MonopolySolution\Monopoly.Models\DataFiles\Cards.csv
         public readonly static string CardPath = $"{RelativePath}\\Monopoly.Models\\DataFiles\\Cards.csv";
+
+        // D:\Monopoly\MonopolySolution\Monopoly.Engine\Logs\Logs.txt
+        public readonly static string LogPath = $"{RelativePath}\\Monopoly.Engine\\Logs\\Logs.txt";
+
+
     }
 }

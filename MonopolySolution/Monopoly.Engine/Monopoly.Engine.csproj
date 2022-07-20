@@ -75,6 +75,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <Content Include="Logs\Logs.txt" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
