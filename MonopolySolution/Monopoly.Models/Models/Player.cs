@@ -12,10 +12,12 @@ namespace Monopoly.Models.Models
         public BoardTile CurrentBoardTile { get; set; }
         public List<BoardTile> OwnedTiles { get; set;}
         public int Balance { get; set; }
+        public Random Random { get; set; }
 
         public Player()
         {
             BuildTileToBaordPositionDictionary();
+            Random = new Random();
         }
 
         public void BuyProperty(BoardTile boardTile)
@@ -77,6 +79,15 @@ namespace Monopoly.Models.Models
             BoardTilePosition.Add(33, (6, 9));
             BoardTilePosition.Add(34, (7, 9));
             BoardTilePosition.Add(35, (8, 9));
+        }
+        public int RollDice()
+        {
+            var rollOne = Random.Next(6);
+            var rollTwo = Random.Next(6);
+
+            return rollOne + rollTwo;
+           
+            
         }
 
     }
