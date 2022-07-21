@@ -9,7 +9,9 @@ namespace Monopoly.Core
         {
             using (StreamWriter sw = File.AppendText(Constants.LogPath))
             {
-                sw.WriteLine($"{DateTime.Now.ToString("mm:ss.fff")} | {message}");
+                var logMessage = $"{DateTime.Now.ToString("mm:ss.fff")} | {message}";
+                sw.WriteLine(logMessage);
+                Console.WriteLine(logMessage);
             }
         }
     }

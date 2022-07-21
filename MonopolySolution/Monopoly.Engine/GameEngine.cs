@@ -26,42 +26,38 @@ namespace Monopoly.Engine
             {
                 foreach (var player in PlayerList)
                 {
+                    // Roll Dice
+                    Wait();
                     Logger.Log($"Player {player.PlayerId}, Starting Turn.");
                     var diceRoll = player.RollDice();
-                    Logger.Log($"Player {player.PlayerId} rolled {diceRoll}");
-                    
+                    Wait();
+                    Logger.Log($"Player {player.PlayerId}, rolled {diceRoll}");
+
+                    // Get new position
                     var newPosition = player.CurrentBoardTile.Position + diceRoll;
                     if (newPosition > 35)
-                    {
                         newPosition = newPosition - 35;
-                    }
 
+                    // Move player
+                    Wait();
                     var newBoardTile = BoardTiles.First(x => x.Position == newPosition);
                     player.MovePlayer(BoardArray, newBoardTile);
 
 
-
-
-
-
-
-
-
+                    // Remove player from game when they have no money left
+                    if (player.Balance <= 0)
+                    {
+                        PlayerList.Remove(player);
+                    }
                 }
             }
             
         }
 
-
-
-
-
-
-
-
-
-
-
+        private static void Wait()
+        {
+            Task.Delay(150).Wait();
+        }
 
         public void BuildPlayers()
         {
