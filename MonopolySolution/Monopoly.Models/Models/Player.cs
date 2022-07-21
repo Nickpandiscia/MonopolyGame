@@ -15,11 +15,11 @@ namespace Monopoly.Models.Models
         public List<BoardTile> OwnedTiles { get; set;}
         public int Balance { get; set; }
         public Random Random { get; set; }
+        public int RandomSeed { get; set; }
 
         public Player()
         {
             BuildTileToBaordPositionDictionary();
-            Random = new Random();
         }
 
         public void BuyProperty(BoardTile boardTile)
@@ -45,6 +45,9 @@ namespace Monopoly.Models.Models
 
         public int RollDice()
         {
+            if (Random == null)
+                Random = new Random(RandomSeed);
+
             var rollOne = Random.Next(1,6);
             var rollTwo = Random.Next(1,6);
             return rollOne + rollTwo;

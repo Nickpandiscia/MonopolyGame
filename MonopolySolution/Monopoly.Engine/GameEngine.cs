@@ -29,7 +29,13 @@ namespace Monopoly.Engine
                     Logger.Log($"Player {player.PlayerId}, Starting Turn.");
                     var diceRoll = player.RollDice();
                     Logger.Log($"Player {player.PlayerId} rolled {diceRoll}");
+                    
                     var newPosition = player.CurrentBoardTile.Position + diceRoll;
+                    if (newPosition > 35)
+                    {
+                        newPosition = newPosition - 35;
+                    }
+
                     var newBoardTile = BoardTiles.First(x => x.Position == newPosition);
                     player.MovePlayer(BoardArray, newBoardTile);
 
@@ -66,6 +72,7 @@ namespace Monopoly.Engine
                 player.Balance = Settings.StartingPlayerBalance;
                 player.CurrentBoardTile = BoardTiles.First(x => x.Position == 0);
                 player.PlayerId = i + 1;
+                player.RandomSeed = int.MaxValue / (i + 1);
                 playerList.Add(player);
             }
             PlayerList = playerList;
