@@ -45,8 +45,8 @@ namespace Monopoly.Models.Models
 
         public int RollDice()
         {
-            var rollOne = Random.Next(6);
-            var rollTwo = Random.Next(6);
+            var rollOne = Random.Next(1,6);
+            var rollTwo = Random.Next(1,6);
             return rollOne + rollTwo;
         }
 

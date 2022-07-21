@@ -22,10 +22,16 @@ namespace Monopoly.Engine
 
         public void RunGame()
         {
-            foreach(var player in PlayerList)
+            while (PlayerList.Count > 1)
             {
-                Logger.Log($"Player {player.PlayerId}, Starting Turn.");
-                
+                foreach (var player in PlayerList)
+                {
+                    Logger.Log($"Player {player.PlayerId}, Starting Turn.");
+                    var diceRoll = player.RollDice();
+                    Logger.Log($"Player {player.PlayerId} rolled {diceRoll}");
+                    var newPosition = player.CurrentBoardTile.Position + diceRoll;
+                    var newBoardTile = BoardTiles.First(x => x.Position == newPosition);
+                    player.MovePlayer(BoardArray, newBoardTile);
 
 
 
@@ -34,7 +40,10 @@ namespace Monopoly.Engine
 
 
 
+
+                }
             }
+            
         }
 
 
