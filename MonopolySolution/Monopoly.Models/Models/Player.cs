@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Monopoly.Core;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,7 @@ namespace Monopoly.Models.Models
 {
     public class Player
     {
+        public int PlayerId { get; set; }
         Dictionary<int, (int x, int y)> BoardTilePosition = new Dictionary<int, (int, int)>();
         public BoardTile CurrentBoardTile { get; set; }
         public List<BoardTile> OwnedTiles { get; set;}
@@ -28,6 +30,8 @@ namespace Monopoly.Models.Models
 
         public void MovePlayer(string[,] boardArray, BoardTile newBoardTile)
         {
+            Logger.Log($"Player {PlayerId}, Moving from {CurrentBoardTile.Name}:{CurrentBoardTile.Position} to {newBoardTile.Name}:{newBoardTile.Position}");
+
             string resetTile = "[ ]";
 
             var currentBoardPosition = BoardTilePosition[CurrentBoardTile.Position];
@@ -39,7 +43,12 @@ namespace Monopoly.Models.Models
             CurrentBoardTile = newBoardTile;
         }
 
-
+        public int RollDice()
+        {
+            var rollOne = Random.Next(6);
+            var rollTwo = Random.Next(6);
+            return rollOne + rollTwo;
+        }
 
         private void BuildTileToBaordPositionDictionary()
         {
@@ -79,15 +88,6 @@ namespace Monopoly.Models.Models
             BoardTilePosition.Add(33, (6, 9));
             BoardTilePosition.Add(34, (7, 9));
             BoardTilePosition.Add(35, (8, 9));
-        }
-        public int RollDice()
-        {
-            var rollOne = Random.Next(6);
-            var rollTwo = Random.Next(6);
-
-            return rollOne + rollTwo;
-           
-            
         }
 
     }

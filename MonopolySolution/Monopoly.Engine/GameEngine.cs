@@ -4,6 +4,7 @@ using System.Linq;
 using System.IO;
 using System.Text;
 using System.Threading.Tasks;
+using Monopoly.Core;
 
 namespace Monopoly.Engine
 {
@@ -23,10 +24,30 @@ namespace Monopoly.Engine
         {
             foreach(var player in PlayerList)
             {
-                System.Console.WriteLine($"{player}");
+                Logger.Log($"Player {player.PlayerId}, Starting Turn.");
                 
+
+
+
+
+
+
+
+
             }
         }
+
+
+
+
+
+
+
+
+
+
+
+
         public void BuildPlayers()
         {
             var playerList = new List<Player>();
@@ -35,8 +56,8 @@ namespace Monopoly.Engine
                 Player player = new Player();
                 player.Balance = Settings.StartingPlayerBalance;
                 player.CurrentBoardTile = BoardTiles.First(x => x.Position == 0);
+                player.PlayerId = i + 1;
                 playerList.Add(player);
-
             }
             PlayerList = playerList;
         }

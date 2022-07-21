@@ -53,5 +53,11 @@
     <None Include="DataFiles\BoardTiles.csv" />
     <None Include="DataFiles\Cards.csv" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Monopoly.Core\Monopoly.Core.csproj">
+      <Project>{F18CC5BB-0201-4484-96A6-8EF39A260C7C}</Project>
+      <Name>Monopoly.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

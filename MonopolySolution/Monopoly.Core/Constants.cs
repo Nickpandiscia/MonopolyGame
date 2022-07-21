@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Monopoly.Engine.Tools
+namespace Monopoly.Core
 {
     public static class Constants
     {
@@ -20,7 +20,5 @@ namespace Monopoly.Engine.Tools
 
         // D:\Monopoly\MonopolySolution\Monopoly.Engine\Logs\Logs.txt
         public readonly static string LogPath = $"{RelativePath}\\Monopoly.Engine\\Logs\\Logs.txt";
-
-
     }
 }

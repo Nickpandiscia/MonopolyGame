@@ -70,7 +70,6 @@
     <Compile Include="GameEngineBase.cs" />
     <Compile Include="GameSettings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Tools\Constants.cs" />
     <Compile Include="Tools\CsvParser.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -79,6 +78,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Monopoly.Core\Monopoly.Core.csproj">
+      <Project>{F18CC5BB-0201-4484-96A6-8EF39A260C7C}</Project>
+      <Name>Monopoly.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Monopoly.Models\Monopoly.Models.csproj">
       <Project>{5FD9B77C-387C-4CBA-BE6C-0AA02C9ED6C6}</Project>
       <Name>Monopoly.Models</Name>

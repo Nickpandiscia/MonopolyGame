@@ -1,5 +1,6 @@
 ﻿using CsvHelper;
 using CsvHelper.Configuration;
+using Monopoly.Core;
 using Monopoly.Models.Models;
 using System;
 using System.Collections.Generic;
